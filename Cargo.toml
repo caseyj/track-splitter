@@ -1,0 +1,6 @@
+[package]
+name = "track-splitter"
+version = "0.1.0"
+authors = ["JohnBCasey <caseyjohnb@gmail.com>"]
+
+[dependencies]
