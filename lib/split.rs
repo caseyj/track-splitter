@@ -10,7 +10,7 @@
 /// 
 /// # Returns 
 /// 
-/// * an array of generics randomized by rust's Seedable Standard RNG
+/// * vector of generics randomized by rust's Seedable Standard RNG
 pub fn randomize_indices<T>(indicies: &mut Vec<T>, seed_val: usize)->Vec<T> where T: Clone{
     
     let seed: &[_] = &vec![seed_val];
@@ -24,7 +24,7 @@ pub fn randomize_indices<T>(indicies: &mut Vec<T>, seed_val: usize)->Vec<T> wher
 /// 
 /// # Arguments
 /// 
-/// * randomized_data : array of generics - assumed pre-randomized
+/// * randomized_data : vector of generics - assumed pre-randomized
 /// 
 /// * percent_training : f64 - the decimal value we will use to determine where
 ///         the split in the training set will be
