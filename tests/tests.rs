@@ -3,7 +3,7 @@ extern crate track_splitter;
 #[cfg(test)]
 mod tests {
 
-    use track_splitter::split::{randomize_indices, split_percent};
+    use track_splitter::split::{randomize_indices, split_percent, k_fold};
     
     #[test]
     fn check_randomized() {
@@ -26,5 +26,19 @@ mod tests {
         let rando_2 = rando[7..].to_vec();
         //check that the splitter works
         assert_eq!( vec![rando_1,rando_2] , split_percent(&mut rando, 0.7))
+    }
+
+    #[test]
+    fn check_folds(){
+        let mut ten = vec![0,1,2,3,4,5,6,7,8,9];
+        assert_eq!(k_fold(&mut ten, 10).len(), 10);
+        let mut one_hundred : Vec<u8> = Vec::new();
+        for i in 0..100{
+            one_hundred.push(i);
+        }
+        assert_eq!(k_fold(&mut one_hundred, 10).len(), 10);
+        for i in 0..10{
+            assert_eq!(k_fold(&mut one_hundred, 10)[i].len(), 10);
+        }
     }
 }
