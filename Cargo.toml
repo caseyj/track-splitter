@@ -1,6 +1,12 @@
 [package]
-name = "track-splitter"
-version = "0.1.0"
+name = "track_splitter"
+version = "0.0.1"
 authors = ["JohnBCasey <caseyjohnb@gmail.com>"]
 
+[lib]
+name = "track_splitter"
+path = "lib/lib.rs"
+
+
 [dependencies]
+rand="0.4.0"
