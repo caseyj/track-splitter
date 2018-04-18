@@ -72,7 +72,7 @@ pub fn split_percent<T>(randomized_data: &mut Vec<T>, percent_training: f64)->Ve
 /// * One super vector of the k folds 
 ///     * s[i] is the ith fold of k total folds 
 /// 
-pub fn k_fold<T>(randomized_data: &mut Vec<T>, k: u8)->Vec<Vec<T>> where T: Clone{
+pub fn k_fold<T>(randomized_data: &mut Vec<T>, k: u32)->Vec<Vec<T>> where T: Clone{
     let fold_size : u32 = (randomized_data.len() as f64/ k as f64).floor() as u32;
     let mut folds : Vec<Vec<T>> = Vec::new();
     for i in 0..k{
